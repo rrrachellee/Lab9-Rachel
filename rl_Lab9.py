@@ -1,21 +1,16 @@
-def decode (passC):
-    #already should be an integer at this point
-    decoded = []
-    for i in range (len(passC)):
-        meow = passC[i] - 3
-        decoded.append(meow)
-    return decoded 
-
-
 def encode_password(password):
-    # Add your encoding logic here
-    encoded_password = password[::-1]  # For demonstration purposes, simply reverse the password
+        encoded_password = ""
+    for digit in password:
+        encoded_digit = str((int(digit) + 3) % 10)
+        encoded_password += encoded_digit
     return encoded_password
 
 
 def decode_password(encoded_password):
-    # Add your decoding logic here
-    decoded_password = encoded_password[::-1]  # For demonstration purposes, simply reverse the encoded password
+    decoded_password = ""
+    for digit in encoded_password:
+        decoded_digit = str((int(digit) - 3) % 10)
+        decoded_password += decoded_digit
     return decoded_password
 
 
