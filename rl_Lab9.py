@@ -26,7 +26,8 @@ while True:
         print("Your password has been encoded and stored!")
     elif choice == "2":
         if 'encoded_password' in locals():
-            print(f"The encoded password is {encoded_password}, and the original password is {decode_password(encoded_password)}.")
+            decoded = decode_password(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded}.")
         else:
             print("You haven't encoded any password yet.")
     elif choice == "3":
